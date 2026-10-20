@@ -26,14 +26,14 @@
 \begin{table}[H]\centering
   \begin{tabularx}{\textwidth}{|>{\ttfamily\fontsize{13pt}{16pt}\selectfont\raggedright\arraybackslash}p{3.2cm}|X|}\hline
     \tableheader{สถานะ} & \tableheader{ความหมาย} \\\hline
-    PENDING & คำร้องกำลังรอการพิจารณา \\\hline
-WAITING & ขั้นยังทำรายการไม่ได้เพราะรอขั้นก่อน \\\hline
+    PENDING & คำร้องกำลังรอการพิจารณา หรือขั้นถัดไปที่รอขั้นก่อน \\\hline
 CURRENT & ขั้นปัจจุบัน ผู้มีสิทธิ์พิจารณาได้ \\\hline
 APPROVED & ขั้นหรือคำร้องผ่านแล้ว \\\hline
 REJECTED & ไม่อนุมัติและ workflow สิ้นสุด \\\hline
   \end{tabularx}
   \caption{สถานะคำร้องและขั้นอนุมัติ}
 \end{table}
+ระบบยังรองรับค่าเดิม \code{WAITING} โดยแปลงเป็น \code{PENDING} เพื่ออ่านข้อมูลเก่า แต่ขั้นที่สร้างใหม่ใช้ \code{PENDING}
 การเปลี่ยนสถานะเป็นไปตามกฎต่อไปนี้
 \begin{itemize}
   \item ขั้นแรกเริ่มต้นด้วยสถานะ \code{CURRENT}
