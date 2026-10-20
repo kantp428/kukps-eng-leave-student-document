@@ -1,16 +1,16 @@
 \section{การแก้ปัญหาและความปลอดภัย}
 \subsection{ปัญหาสำหรับผู้ใช้งาน}
-\begin{table}[htbp]\centering
-  \begin{tabularx}{\textwidth}{p{4cm}X}\toprule
-    \tableheader{ปัญหา} & \tableheader{วิธีดำเนินการ} \\\midrule
-    เข้าหน้า role ไม่ได้ & ออกจากระบบ เข้าใหม่ และตรวจ role จากระบบต้นทาง \\
-    Session หมดอายุหรือ 401 & เข้าระบบใหม่และไม่ส่งรายการซ้ำ \\
-    ไม่พบรายวิชา & ตรวจภาคปัจจุบัน ข้อมูลลงทะเบียน และค้นด้วยรหัสวิชา \\
-    ส่งคำร้องไม่ได้ & ตรวจช่องบังคับ วัน รายวิชา เบอร์ ที่อยู่ และไฟล์ \\
-    ไฟล์ไม่ผ่าน & ใช้ JPG, JPEG, PNG, WEBP หรือ PDF ไม่เกิน 2 MB \\
-    ไม่พบเส้นทางอนุมัติ & ตรวจที่ปรึกษา สาขา ผู้ดำรงตำแหน่ง และบัญชี \\
-    ปุ่มอนุมัติไม่แสดง & ตรวจขั้นปัจจุบัน ผลเดิม และ role \\
-    รายงานว่าง & ตรวจตัวกรอง แล้วให้ผู้ดูแลตรวจ warehouse \\\bottomrule
+\begin{table}[H]\centering
+  \begin{tabularx}{\textwidth}{|p{4cm}|X|}\hline
+    \tableheader{ปัญหา} & \tableheader{วิธีดำเนินการ} \\\hline
+    เข้าหน้า role ไม่ได้ & ออกจากระบบ เข้าใหม่ และตรวจ role จากระบบต้นทาง \\\hline
+Session หมดอายุหรือ 401 & เข้าระบบใหม่และไม่ส่งรายการซ้ำ \\\hline
+ไม่พบรายวิชา & ตรวจภาคปัจจุบัน ข้อมูลลงทะเบียน และค้นด้วยรหัสวิชา \\\hline
+ส่งคำร้องไม่ได้ & ตรวจช่องบังคับ วัน รายวิชา เบอร์ ที่อยู่ และไฟล์ \\\hline
+ไฟล์ไม่ผ่าน & ใช้ JPG, JPEG, PNG, WEBP หรือ PDF ไม่เกิน 2 MB \\\hline
+ไม่พบเส้นทางอนุมัติ & ตรวจที่ปรึกษา สาขา ผู้ดำรงตำแหน่ง และบัญชี \\\hline
+ปุ่มอนุมัติไม่แสดง & ตรวจขั้นปัจจุบัน ผลเดิม และ role \\\hline
+รายงานว่าง & ตรวจตัวกรอง แล้วให้ผู้ดูแลตรวจ warehouse \\\hline
   \end{tabularx}
   \caption{การแก้ปัญหาเบื้องต้นสำหรับผู้ใช้}
 \end{table}
@@ -18,10 +18,14 @@
 \subsection{ปัญหาสำหรับผู้พัฒนา}
 \begin{itemize}
   \item \code{DATABASE\_URL is required}: ตรวจ \code{apps/api/.env} และ working directory
-  \item Web ได้ HTML แทน JSON: ตรวจ \code{NEXT\_PUBLIC\_API\_URL} และ API prefix
+  \item Web ได้ HTML แทน JSON: ตรวจ \code{API\_URL}, backend proxy และ API prefix
   \item API ตอบ 401: ตรวจ Bearer token อายุ token และบริการยืนยัน token
   \item ไม่พบ approval route: ตรวจ advisor, major/department, ผู้ดำรงตำแหน่ง และ account mapping
-  \item รายงานไม่มีข้อมูล: ตรวจ \code{WAREHOUSE\_DATABASE\_URL} และรอบนำเข้า
+  \item รายงานไม่มีข้อมูล: ตรวจ URL ของฐานต้นทางและคลังข้อมูล ได้แก่
+
+    \code{ETL\_SOURCE\_DATABASE\_URL} และ \code{WAREHOUSE\_V2\_DATABASE\_URL}
+
+    จากนั้นตรวจ data-quality check และรอบ ETL
   \item เปิดหลักฐานไม่ได้: ตรวจ \code{BASE\_STORAGE\_PATH}, permission และชื่อไฟล์
   \item Prisma client ไม่ตรง schema: รัน \code{pnpm --filter api generate}
 \end{itemize}
@@ -32,4 +36,4 @@
 ก่อน production ต้องไม่ commit secrets, กำหนด public token secret, จำกัด database privilege และ CORS, ใช้ persistent storage พร้อม backup, ตรวจ authorization ของทุก write endpoint และจัดให้มี audit log, malware scanning, rate limiting, security headers, monitoring, automated tests และแผนกู้คืน
 
 \subsection{สรุป}
-เอกสารนี้อ้างอิง source code ที่ตรวจสอบ ณ วันที่ 20 สิงหาคม 2569 เมื่อ workflow, role, endpoint, validation หรือ deployment เปลี่ยน ต้องปรับ section ที่เกี่ยวข้องและสร้าง PDF ใหม่ก่อนเผยแพร่
+เอกสารนี้อ้างอิง source code ที่ตรวจสอบ ณ วันที่ 19 ตุลาคม 2569 เมื่อ workflow, role, endpoint, validation, ETL หรือ deployment เปลี่ยน ต้องปรับ section ที่เกี่ยวข้องและสร้าง PDF ใหม่ก่อนเผยแพร่

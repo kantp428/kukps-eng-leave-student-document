@@ -1,6 +1,6 @@
 # โปสเตอร์ระบบลานิสิต
 
-A2 แนวตั้ง 420 × 594 มม. ใช้ XeLaTeX และฟอนต์ Bai Jamjuree จาก `font/Bai_Jamjuree/` โดยตรง ไม่ต้องติดตั้งฟอนต์ใน Windows ฟอนต์จะฝังใน PDF
+A4 แนวตั้ง 210 × 297 มม. (ย่อจากผังออกแบบเดิม A2 ในสัดส่วน 50%) ใช้ XeLaTeX และฟอนต์ Bai Jamjuree จาก `font/Bai_Jamjuree/` โดยตรง ไม่ต้องติดตั้งฟอนต์ใน Windows ฟอนต์จะฝังใน PDF
 
 ## สร้าง PDF
 
@@ -8,7 +8,7 @@ A2 แนวตั้ง 420 × 594 มม. ใช้ XeLaTeX และฟอน
 ./scripts/build.ps1
 ```
 
-ผลลัพธ์คือ `poster-a2.pdf` ส่วนไฟล์ชั่วคราวอยู่ใน `build/` ใช้ VS Code กับ LaTeX Workshop ที่ตั้งค่าไว้เดิมได้
+ผลลัพธ์คือ `poster-a4.pdf` ส่วนไฟล์ชั่วคราวอยู่ใน `build/` ใช้ VS Code กับ LaTeX Workshop ที่ตั้งค่าไว้เดิมได้
 
 ## ใส่ภาพ
 
