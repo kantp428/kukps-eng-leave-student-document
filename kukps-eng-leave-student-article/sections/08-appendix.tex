@@ -26,14 +26,15 @@ FR09 & โหลดซ้ำไม่เพิ่มยอด; ล้มเห�
 ข้อจำกัดที่เอกสารโครงการระบุคือข้อมูลเจ้าของรายวิชา ภาควิชา และประเภทหลักสูตรยังต้องมี mapping ทางการเพื่อให้รายงานครบถ้วน ค่าที่ไม่ทราบคงไว้เป็นข้อมูลไม่ทราบ ไม่แทนด้วยสัดส่วนจำลอง ประวัติเวลาการเปิดขั้นและตัดสินบางรายการไม่ครบ จึงไม่ควรแทนระยะเวลาที่ขาดด้วยศูนย์ ระบบข้อมูลสนับสนุน เก็บข้อมูลอ้างอิงปัจจุบันโดยไม่มีมิติภาคการศึกษาชัดเจน จึงต้องระวังการผูกข้อมูลนี้กับประวัติย้อนหลัง อีกทั้งยังต้องกำหนดรอบโหลดข้อมูลรายงานอัตโนมัติให้เหมาะกับสภาพแวดล้อมใช้งาน
 
 \clearpage
+% Raster PNGs sized for the printed page keep PDF rendering responsive.
 \section{แผนภาพฐานข้อมูลใบลา (db)}
 อ่านสคีมาที่ Deploy เมื่อ 18 ต.ค. 2569: MySQL 9.7.2 จำนวน 19 ตาราง 136 คอลัมน์ รวมตาราง migration เส้นเชื่อมมาจาก foreign key ที่ประกาศจริงเท่านั้น รูปแสดงคีย์เพื่อให้อ่านได้ ส่วนรายการคอลัมน์เต็มอยู่ใน images/db-full.svg และ SQL อยู่ใน db/db/file\_visual.sql ไม่ส่งข้อมูลส่วนบุคคลหรือข้อมูลลับไปยังเครื่องมือออนไลน์
-\begin{center}\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/db-keys.png}\end{center}
+\begin{center}\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/db-keys-raster.png}\end{center}
 \clearpage
 \section{แผนภาพคลังข้อมูล (wh)}
 อ่านสคีมาที่ Deploy เมื่อ 18 ต.ค. 2569: MySQL 9.7.2 จำนวน 19 ตาราง 259 คอลัมน์ ใช้ตระกูล dw\_* โดยข้อเท็จจริงแยกคำขอ รายวิชา และขั้นพิจารณา ไม่ใช้โครงสร้าง wh\_* เดิมแทนฐานที่ติดตั้งจริง คอลัมน์เต็มอยู่ใน images/wh-full.svg และ SQL อยู่ใน db/wh/file\_visual.sql
-\begin{center}\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/wh-keys.png}\end{center}
+\begin{center}\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/wh-keys-raster.png}\end{center}
 \clearpage
 \section{แผนภาพระบบข้อมูลสนับสนุน (leave-com)}
 อ่านสคีมาจริงจาก MySQL 8.0.44 ใน Docker บนเครื่องเมื่อ 18 ต.ค. 2569 จำนวน 5 ตาราง 24 คอลัมน์ ประกอบด้วยตารางงาน 4 ตารางและ \_prisma\_migrations อีก 1 ตาราง มี foreign key 2 ความสัมพันธ์ โดย advisor\_student อ้างรหัสจากระบบภายนอก จึงไม่วาด foreign key ไปยังบัญชีในฐานใบลาเอง รายการคอลัมน์เต็มอยู่ใน images/leave-com-full.svg และ SQL อยู่ใน db/leave-com/file\_visual.sql
-\begin{center}\includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/leave-com-full.png}\end{center}
+\begin{center}\includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/leave-com-full-raster.png}\end{center}
