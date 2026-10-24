@@ -1,7 +1,51 @@
 % !TeX root = ../main.tex
 \begin{center}\textbf{ภาคผนวกประกอบบทความระบบลานิสิต}\end{center}
-รายละเอียดข้อกำหนด การประเมิน และสคีมา ณ 18 ตุลาคม 2569
+รายละเอียดฟังก์ชัน รายงาน การประเมิน และแผนภาพฐานข้อมูล ปรับปรุง 24 ตุลาคม 2569
 \appendix
+\section{ฟังก์ชันและรายงานตามบทบาทผู้ใช้งาน}
+ตารางต่อไปนี้สรุปสิทธิ์ของแต่ละบทบาท โดย {\fontspec{Segoe UI Symbol}✓} หมายถึงใช้งานได้ภายในขอบเขตข้อมูลที่ได้รับสิทธิ์ และ -- หมายถึงไม่ใช่สิทธิ์ของบทบาทนั้นโดยตรง ผู้ใช้ที่มีหลายบทบาทใช้สิทธิ์ตามบทบาทที่ได้รับจริง ผู้ดูแลระบบในตารางหมายถึงบทบาท ADMIN และงานเจ้าหน้าที่ตามสิทธิ์ที่กำหนด ไม่ได้รับสิทธิ์อนุมัติแทนผู้พิจารณาโดยอัตโนมัติ
+\begingroup
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.25}
+\begin{table}[H]
+\caption{ฟังก์ชันของระบบจำแนกตามบทบาท}\label{tab:appendix-functions}
+\centering
+\begin{tabularx}{\textwidth}{|X|*{5}{>{\centering\arraybackslash}p{19mm}|}}
+\hline
+\textbf{ฟังก์ชัน} & \textbf{นิสิต} & \textbf{อ.ที่ปรึกษา} & \shortstack{\textbf{หัวหน้า}\\\textbf{ภาควิชา}} & \textbf{รองคณบดี} & \shortstack{\textbf{ผู้ดูแล}\\\textbf{ระบบ}} \\ \hline
+ยื่นคำขอลาและแนบหลักฐาน & {\fontspec{Segoe UI Symbol}✓} & -- & -- & -- & -- \\ \hline
+ติดตามสถานะและดูประวัติใบลาของตนเอง & {\fontspec{Segoe UI Symbol}✓} & -- & -- & -- & -- \\ \hline
+แก้ไขหลักฐานตามสถานะที่ระบบอนุญาต & {\fontspec{Segoe UI Symbol}✓} & -- & -- & -- & -- \\ \hline
+เปิดหรือดาวน์โหลดเอกสารใบลาที่มีสิทธิ์เข้าถึง & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} \\ \hline
+พิจารณาอนุมัติหรือปฏิเสธใบลาขั้นปัจจุบัน & -- & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & -- \\ \hline
+ตรวจสอบประวัติการพิจารณาของตนเอง & -- & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & -- \\ \hline
+ดูข้อมูลนิสิตในความดูแลของที่ปรึกษา & -- & {\fontspec{Segoe UI Symbol}✓} & -- & -- & -- \\ \hline
+ตั้งค่ากฎอนุมัติอัตโนมัติในขั้นที่รับผิดชอบ & -- & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & -- \\ \hline
+ดูรายการใบลาในขอบเขตหน่วยงาน & -- & -- & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} & {\fontspec{Segoe UI Symbol}✓} \\ \hline
+จัดการปีการศึกษาและภาคการศึกษา & -- & -- & -- & -- & {\fontspec{Segoe UI Symbol}✓} \\ \hline
+จัดการข้อมูลคณะและสาขา & -- & -- & -- & -- & {\fontspec{Segoe UI Symbol}✓} \\ \hline
+จัดการหรือนำเข้าวิชา ผู้สอน และที่ปรึกษาในระบบข้อมูลสนับสนุน & -- & -- & -- & -- & {\fontspec{Segoe UI Symbol}✓} \\ \hline
+\end{tabularx}
+\end{table}
+การพิจารณาทำได้เฉพาะผู้รับผิดชอบขั้นปัจจุบันและตามลำดับที่กำหนด การแก้หลักฐานขึ้นกับสถานะคำขอ ส่วนงานข้อมูลสนับสนุนต้องมีสิทธิ์ในระบบนั้นแยกต่างหาก การรับทราบรายวิชาเป็นสิทธิ์อาจารย์ผู้สอน (LECTURER) ซึ่งเป็นบทบาทเพิ่มเติมจากห้าบทบาทในตาราง
+\begin{table}[H]
+\caption{รายงานของระบบจำแนกตามบทบาท}\label{tab:appendix-reports}
+\centering
+\begin{tabularx}{\textwidth}{|X|*{5}{>{\centering\arraybackslash}p{19mm}|}}
+\hline
+\textbf{รายงาน} & \textbf{นิสิต} & \textbf{อ.ที่ปรึกษา} & \shortstack{\textbf{หัวหน้า}\\\textbf{ภาควิชา}} & \textbf{รองคณบดี} & \shortstack{\textbf{ผู้ดูแล}\\\textbf{ระบบ}} \\ \hline
+ประวัติและสถิติการลาของตนเอง แยกเทอมและรายวิชา & {\fontspec{Segoe UI Symbol}✓} & -- & -- & -- & -- \\ \hline
+ภาพรวมและรายละเอียดการลาของนิสิตในที่ปรึกษา & -- & {\fontspec{Segoe UI Symbol}✓} & -- & -- & -- \\ \hline
+ภาพรวมระดับภาควิชา สรุปตามอาจารย์ นิสิต และรายวิชา & -- & -- & {\fontspec{Segoe UI Symbol}✓} & -- & -- \\ \hline
+ผลกระทบรายวิชาและเวลาเฉลี่ยการพิจารณาระดับภาควิชา & -- & -- & {\fontspec{Segoe UI Symbol}✓} & -- & -- \\ \hline
+ภาพรวมระดับคณะ เปรียบเทียบภาควิชาและหลักสูตร & -- & -- & -- & {\fontspec{Segoe UI Symbol}✓} & -- \\ \hline
+สรุปตามอาจารย์และเวลาเฉลี่ยการพิจารณาระดับคณะ & -- & -- & -- & {\fontspec{Segoe UI Symbol}✓} & -- \\ \hline
+ภาพรวมและแนวโน้มระดับภาควิชาสำหรับผู้ดูแลระบบ & -- & -- & -- & -- & {\fontspec{Segoe UI Symbol}✓} \\ \hline
+\end{tabularx}
+\end{table}
+\endgroup
+รายงานทุกส่วนจำกัดข้อมูลตามตัวตนและความสัมพันธ์กับหน่วยงาน รายงานของผู้สอนต้องมีบทบาท LECTURER เพิ่มเติม บทบาท DEPARTMENT\_HEAD\_REPORT และ EXECUTIVE\_REPORT อาจได้รับสิทธิ์อ่านรายงานเฉพาะด้านโดยไม่มีสิทธิ์พิจารณาใบลา ข้อมูลรายงานอ้างอิงรอบโหลดคลังข้อมูลที่สำเร็จล่าสุด
+\clearpage
 \section{เกณฑ์ยอมรับของข้อกำหนดการทำงาน}
 เกณฑ์ต่อไปนี้เป็นผลคาดหวังสำหรับทดสอบ ยังไม่ใช่ผลผ่านจริง ควรทดสอบทั้งกรณีอนุญาตและปฏิเสธสิทธิ์โดยเปลี่ยนตัวตนผู้ใช้จริง
 \begin{tabularx}{\textwidth}{|p{16mm}|X|}
@@ -25,16 +69,36 @@ FR09 & โหลดซ้ำไม่เพิ่มยอด; ล้มเห�
 การประเมินกับผู้ใช้ควรวัดเวลาที่ใช้ยื่นคำขอ ความสำเร็จในการทำงาน และความพึงพอใจ แยกกลุ่มนิสิต อาจารย์ และเจ้าหน้าที่ พร้อมระบุจำนวนผู้เข้าร่วมและเงื่อนไขเปรียบเทียบ หากประเมินบริการควรรายงานเวลาโต้ตอบ เปอร์เซ็นไทล์ และอัตราข้อผิดพลาดภายใต้ภาระงานที่ระบุ บทความฉบับนี้ยังไม่มีข้อมูลดังกล่าวจึงไม่รายงานค่าประสิทธิภาพ
 ข้อจำกัดที่เอกสารโครงการระบุคือข้อมูลเจ้าของรายวิชา ภาควิชา และประเภทหลักสูตรยังต้องมี mapping ทางการเพื่อให้รายงานครบถ้วน ค่าที่ไม่ทราบคงไว้เป็นข้อมูลไม่ทราบ ไม่แทนด้วยสัดส่วนจำลอง ประวัติเวลาการเปิดขั้นและตัดสินบางรายการไม่ครบ จึงไม่ควรแทนระยะเวลาที่ขาดด้วยศูนย์ ระบบข้อมูลสนับสนุน เก็บข้อมูลอ้างอิงปัจจุบันโดยไม่มีมิติภาคการศึกษาชัดเจน จึงต้องระวังการผูกข้อมูลนี้กับประวัติย้อนหลัง อีกทั้งยังต้องกำหนดรอบโหลดข้อมูลรายงานอัตโนมัติให้เหมาะกับสภาพแวดล้อมใช้งาน
 
+
 \clearpage
-% Raster PNGs sized for the printed page keep PDF rendering responsive.
-\section{แผนภาพฐานข้อมูลใบลา (db)}
-อ่านสคีมาที่ Deploy เมื่อ 18 ต.ค. 2569: MySQL 9.7.2 จำนวน 19 ตาราง 136 คอลัมน์ รวมตาราง migration เส้นเชื่อมมาจาก foreign key ที่ประกาศจริงเท่านั้น รูปแสดงคีย์เพื่อให้อ่านได้ ส่วนรายการคอลัมน์เต็มอยู่ใน images/db-full.svg และ SQL อยู่ใน db/db/file\_visual.sql ไม่ส่งข้อมูลส่วนบุคคลหรือข้อมูลลับไปยังเครื่องมือออนไลน์
-\begin{center}\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/db-keys-raster.png}\end{center}
+\begin{landscape}
+\section{แผนภาพฐานข้อมูลระบบใบลา (DB)}
+\noindent แผนภาพจากแฟ้ม \texttt{DB.png} ที่ผู้จัดทำจัดเตรียม ปรับขนาดตามสัดส่วนให้เต็มพื้นที่หน้าแนวนอน
+\begin{center}
+\includegraphics[width=\linewidth,height=145mm,keepaspectratio]{images/leave-schema/DB.png}
+\end{center}
 \clearpage
-\section{แผนภาพคลังข้อมูล (wh)}
-อ่านสคีมาที่ Deploy เมื่อ 18 ต.ค. 2569: MySQL 9.7.2 จำนวน 19 ตาราง 259 คอลัมน์ ใช้ตระกูล dw\_* โดยข้อเท็จจริงแยกคำขอ รายวิชา และขั้นพิจารณา ไม่ใช้โครงสร้าง wh\_* เดิมแทนฐานที่ติดตั้งจริง คอลัมน์เต็มอยู่ใน images/wh-full.svg และ SQL อยู่ใน db/wh/file\_visual.sql
-\begin{center}\includegraphics[width=\textwidth,height=0.75\textheight,keepaspectratio]{images/wh-keys-raster.png}\end{center}
+\section{ภาพรวมคลังข้อมูล (DW Overview)}
+\noindent แผนภาพจากแฟ้ม \texttt{DW-OVERVIEW.png} ที่ผู้จัดทำจัดเตรียม ปรับขนาดตามสัดส่วนให้เต็มพื้นที่หน้าแนวนอน
+\begin{center}
+\includegraphics[width=\linewidth,height=145mm,keepaspectratio]{images/leave-schema/DW-OVERVIEW.png}
+\end{center}
 \clearpage
-\section{แผนภาพระบบข้อมูลสนับสนุน (leave-com)}
-อ่านสคีมาจริงจาก MySQL 8.0.44 ใน Docker บนเครื่องเมื่อ 18 ต.ค. 2569 จำนวน 5 ตาราง 24 คอลัมน์ ประกอบด้วยตารางงาน 4 ตารางและ \_prisma\_migrations อีก 1 ตาราง มี foreign key 2 ความสัมพันธ์ โดย advisor\_student อ้างรหัสจากระบบภายนอก จึงไม่วาด foreign key ไปยังบัญชีในฐานใบลาเอง รายการคอลัมน์เต็มอยู่ใน images/leave-com-full.svg และ SQL อยู่ใน db/leave-com/file\_visual.sql
-\begin{center}\includegraphics[width=\textwidth,height=0.65\textheight,keepaspectratio]{images/leave-com-full-raster.png}\end{center}
+\section{แผนภาพความสัมพันธ์คลังข้อมูล (DW ERD)}
+\noindent แผนภาพจากแฟ้ม \texttt{DW-ERD.png} ที่ผู้จัดทำจัดเตรียม ปรับขนาดตามสัดส่วนให้เต็มพื้นที่หน้าแนวนอน
+\begin{center}
+\includegraphics[width=\linewidth,height=145mm,keepaspectratio]{images/leave-schema/DW-ERD.png}
+\end{center}
+\clearpage
+\section{แผนภาพคลังข้อมูลฉบับเต็ม รุ่นที่ 2}
+\noindent แผนภาพจากแฟ้ม \texttt{DW-FULL\_VERSION\_2.png} ที่ผู้จัดทำจัดเตรียม ปรับขนาดตามสัดส่วนให้เต็มพื้นที่หน้าแนวนอน
+\begin{center}
+\includegraphics[width=\linewidth,height=145mm,keepaspectratio]{images/leave-schema/DW-FULL_VERSION_2.png}
+\end{center}
+\clearpage
+\section{แผนภาพคอลัมน์ควบคุมคลังข้อมูล}
+\noindent แผนภาพจากแฟ้ม \texttt{DW-CONTROL\_COLUMNS.png} ที่ผู้จัดทำจัดเตรียม ปรับขนาดตามสัดส่วนให้เต็มพื้นที่หน้าแนวนอน
+\begin{center}
+\includegraphics[width=\linewidth,height=145mm,keepaspectratio]{images/leave-schema/DW-CONTROL_COLUMNS.png}
+\end{center}
+\end{landscape}
