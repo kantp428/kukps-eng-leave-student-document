@@ -2,17 +2,17 @@
 
 ตรวจข้อมูลวันที่ 15 ตุลาคม 2569 โดยไม่เปลี่ยนโค้ดระบบ และไม่เข้าถึงฐานข้อมูลจริงหรือแฟ้ม environment
 
-| เนื้อหา                                   | แหล่งอ้างอิง                                                                               |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ที่มา วัตถุประสงค์ ชื่อผู้เขียน ที่ปรึกษา | `../template/references/PreProject .docx`                                                           |
-| รูปแบบบทความและข้อจำกัด 4 หน้า            | `../template/references/Template.pdf`                                                               |
-| รูปแบบ LaTeX แยกส่วนและฟอนต์              | `../template/article/article/styles/article.tex` และ `../template/article/article/main.tex`                        |
-| ภาพรวมระบบและข้อจำกัด                     | `C:/Users/winne/Desktop/Web/kukps-eng-leave-request/README.md`                             |
-| เทคโนโลยีที่ติดตั้ง                       | `apps/web/package.json`, `apps/api/package.json` ในโครงการเว็บ                             |
-| คำขอและการเปลี่ยนสถานะ                    | `apps/api/src/leave-request/leave-request.service.ts` ในโครงการเว็บ                        |
-| ข้อมูลและความสัมพันธ์                     | `apps/api/prisma/schema.prisma` ในโครงการเว็บ                                              |
-| รายงานและข้อจำกัดข้อมูล                   | `docs/report-warehouse/README.md`, `docs/report-warehouse/05-etl-runbook.md` ในโครงการเว็บ |
-| หน้าใช้งานแยกบทบาท                        | `apps/web/app/student`, `apps/web/app/user`, `apps/web/app/admin-staff` ในโครงการเว็บ      |
+| เนื้อหา                                   | แหล่งอ้างอิง                                                                                |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------- |
+| ที่มา วัตถุประสงค์ ชื่อผู้เขียน ที่ปรึกษา | `../template/references/PreProject .docx`                                                   |
+| รูปแบบบทความและข้อจำกัด 4 หน้า            | `../template/references/Template.pdf`                                                       |
+| รูปแบบ LaTeX แยกส่วนและฟอนต์              | `../template/article/article/styles/article.tex` และ `../template/article/article/main.tex` |
+| ภาพรวมระบบและข้อจำกัด                     | `C:/Users/winne/Desktop/Web/kukps-eng-leave-request/README.md`                              |
+| เทคโนโลยีที่ติดตั้ง                       | `apps/web/package.json`, `apps/api/package.json` ในโครงการเว็บ                              |
+| คำขอและการเปลี่ยนสถานะ                    | `apps/api/src/leave-request/leave-request.service.ts` ในโครงการเว็บ                         |
+| ข้อมูลและความสัมพันธ์                     | `apps/api/prisma/schema.prisma` ในโครงการเว็บ                                               |
+| รายงานและข้อจำกัดข้อมูล                   | `docs/report-warehouse/README.md`, `docs/report-warehouse/05-etl-runbook.md` ในโครงการเว็บ  |
+| หน้าใช้งานแยกบทบาท                        | `apps/web/app/student`, `apps/web/app/user`, `apps/web/app/admin-staff` ในโครงการเว็บ       |
 
 ## การใช้หลักฐาน
 
