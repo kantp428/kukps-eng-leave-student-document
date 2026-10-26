@@ -3,7 +3,7 @@
 /main.pdf
 
 # Reference article kept locally; not part of this manuscript
-/article/
+/template/article/
 
 # LaTeX intermediate files (also covers accidental builds in source folders)
 *.aux

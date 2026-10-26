@@ -4,9 +4,9 @@
 
 | เนื้อหา                                   | แหล่งอ้างอิง                                                                               |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ที่มา วัตถุประสงค์ ชื่อผู้เขียน ที่ปรึกษา | `structure-ref/PreProject .docx`                                                           |
-| รูปแบบบทความและข้อจำกัด 4 หน้า            | `structure-ref/Template.pdf`                                                               |
-| รูปแบบ LaTeX แยกส่วนและฟอนต์              | `article/article/styles/article.tex` และ `article/article/main.tex`                        |
+| ที่มา วัตถุประสงค์ ชื่อผู้เขียน ที่ปรึกษา | `../template/references/PreProject .docx`                                                           |
+| รูปแบบบทความและข้อจำกัด 4 หน้า            | `../template/references/Template.pdf`                                                               |
+| รูปแบบ LaTeX แยกส่วนและฟอนต์              | `../template/article/article/styles/article.tex` และ `../template/article/article/main.tex`                        |
 | ภาพรวมระบบและข้อจำกัด                     | `C:/Users/winne/Desktop/Web/kukps-eng-leave-request/README.md`                             |
 | เทคโนโลยีที่ติดตั้ง                       | `apps/web/package.json`, `apps/api/package.json` ในโครงการเว็บ                             |
 | คำขอและการเปลี่ยนสถานะ                    | `apps/api/src/leave-request/leave-request.service.ts` ในโครงการเว็บ                        |

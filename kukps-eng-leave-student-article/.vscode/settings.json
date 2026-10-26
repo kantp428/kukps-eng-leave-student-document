@@ -37,6 +37,6 @@
   },
   "search.exclude": {
     "build/**": true,
-    "article/**": true
+    "template/article/**": true
   }
 }
