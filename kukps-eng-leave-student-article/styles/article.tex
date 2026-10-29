@@ -16,7 +16,7 @@
 \usepackage{caption}
 \usepackage{indentfirst}
 \usepackage{cite}
-\usepackage{balance}
+\usepackage{flushend}
 \usepackage[unicode,hidelinks]{hyperref}
 \urlstyle{same}
 \setmainfont{Angsana New}[Script=Thai]
@@ -31,10 +31,10 @@
 \setlength{\columnsep}{6mm}
 \setlength{\parindent}{12.7mm}
 \setlength{\parskip}{0pt}
-\setlength{\textfloatsep}{16bp}
-\setlength{\dbltextfloatsep}{16bp}
-\setlength{\dblfloatsep}{16bp}
-\setlength{\intextsep}{16bp}
+\setlength{\textfloatsep}{10bp plus 2bp minus 2bp}
+\setlength{\dbltextfloatsep}{10bp plus 2bp minus 2bp}
+\setlength{\dblfloatsep}{10bp plus 2bp minus 2bp}
+\setlength{\intextsep}{10bp plus 2bp minus 2bp}
 \setlength{\emergencystretch}{3em}
 % Wide research diagrams and tables float at page tops in two-column mode.
 \renewcommand{\dbltopfraction}{0.85}
@@ -58,9 +58,9 @@
 \titleformat{\section}{\fontsize{14bp}{16bp}\selectfont\bfseries\raggedright}{\thesection.}{0.5em}{}
 \titleformat{\subsection}{\fontsize{14bp}{16bp}\selectfont\bfseries\raggedright}{\thesubsection}{0.5em}{}
 \titleformat{\subsubsection}{\fontsize{14bp}{16bp}\selectfont\bfseries\raggedright}{\thesubsubsection}{0.5em}{}
-\titlespacing{\section}{0pt}{16bp}{0pt}
-\titlespacing{\subsection}{0pt}{16bp}{0pt}
-\titlespacing{\subsubsection}{0pt}{16bp}{0pt}
+\titlespacing{\section}{0pt}{12bp plus 2bp minus 2bp}{2bp}
+\titlespacing{\subsection}{0pt}{12bp plus 2bp minus 2bp}{2bp}
+\titlespacing{\subsubsection}{0pt}{12bp plus 2bp minus 2bp}{2bp}
 \DeclareCaptionFont{articlebody}{\fontsize{12bp}{16bp}\selectfont}
 \captionsetup{font=articlebody,labelsep=space,skip=0pt}
 \captionsetup[table]{position=top,justification=raggedright,singlelinecheck=false}
