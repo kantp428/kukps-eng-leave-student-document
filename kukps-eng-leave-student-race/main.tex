@@ -1,0 +1,27 @@
+% !TeX program = xelatex
+\documentclass[12pt,a4paper]{extarticle}
+\input{config/metadata}
+\input{config/layout}
+\geometry{a4paper,margin=2.3cm}
+\usepackage{pdflscape}
+\XeTeXgenerateactualtext=1
+\titleformat{\section}{\bfseries\fontsize{17pt}{22pt}\selectfont}{}{0pt}{}
+\titleformat{\subsection}{\bfseries\fontsize{15pt}{20pt}\selectfont}{}{0pt}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\captionsetup[figure]{justification=centering}
+\newcommand{\pending}[1]{\textcolor{black!65}{#1}}
+\newcommand{\itemheading}[2]{\par\needspace{5\baselineskip}
+\subsection*{#1. #2}}
+\begin{document}
+\input{sections/race-01-basic}
+\clearpage
+\input{sections/race-02-background}
+\clearpage
+\input{sections/race-03-output}
+\clearpage
+\input{sections/race-04-model}
+\clearpage
+\input{sections/race-05-validation}
+\clearpage
+\input{sections/race-06-impact}
+\end{document}

@@ -1,0 +1,350 @@
+\usepackage{graphicx}
+\usepackage{iftex}
+\ifXeTeX\else
+\PackageError{basic-latex}{This template requires XeLaTeX}{Run scripts/build.ps1 or select XeLaTeX.}
+\fi
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{datetime2}
+\usepackage{indentfirst}
+\usepackage[table]{xcolor}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{needspace}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{tocloft}
+\usepackage{caption}
+\usepackage[most]{tcolorbox}
+
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric}
+
+% ---------------- Page Setup ----------------
+\geometry{
+  letterpaper,
+  margin=2.5cm,
+  headheight=20pt,
+  headsep=10pt,
+  footskip=0.5in
+}
+
+% ---------------- Thai Font ----------------
+\setmainfont[
+  Path=fonts/THSarabun/,
+  BoldFont=THSarabun-Bold.ttf,
+  ItalicFont=THSarabun-Italic.ttf,
+  BoldItalicFont=THSarabun-BoldItalic.ttf
+]{THSarabun.ttf}
+
+% ---------------- Code Font ----------------
+\setmonofont[
+  Path=fonts/JetBrainMono/,
+  BoldFont=JetBrainsMono-SemiBold.ttf,
+  ItalicFont=JetBrainsMono-Italic.ttf,
+  BoldItalicFont=JetBrainsMono-SemiBoldItalic.ttf
+]{JetBrainsMono-Regular.ttf}
+% Keep each inline identifier intact; use the same mono family as listings.
+\RenewDocumentCommand{\texttt}{m}{\mbox{\ttfamily\fontsize{10pt}{14pt}\selectfont #1}}
+
+% ---------------- Thai Date ----------------
+\newcommand{\thaimonth}[1]{
+  \ifcase#1\or
+  มกราคม\or กุมภาพันธ์\or มีนาคม\or เมษายน\or
+  พฤษภาคม\or มิถุนายน\or กรกฎาคม\or สิงหาคม\or
+  กันยายน\or ตุลาคม\or พฤศจิกายน\or ธันวาคม
+  \fi
+}
+
+\newcommand{\thaidate}{
+  \number\day\space
+  \thaimonth{\month}\space
+  พ.ศ. \number\numexpr\year+543\relax
+}
+
+% รองรับการตัดคำภาษาไทย
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip = 0pt plus 0.6pt minus 0.1pt
+\XeTeXlinebreakpenalty = 100
+
+% ลดช่องไฟที่กว้างผิดปกติเมื่อจัดข้อความภาษาไทยแบบชิดขอบ
+\tolerance=1800
+\emergencystretch=1.5em
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+% ---------------- Paragraph Setup ----------------
+\makeatletter
+\renewcommand\normalsize{\@setfontsize\normalsize{13pt}{19.5pt}}
+\makeatother
+\normalsize
+\setstretch{1.0}
+\leftskip=0pt
+\rightskip=0pt
+\parfillskip=0pt plus 1fil
+% Keep explicit spaces in mixed Thai/English prose from stretching excessively.
+\spaceskip=0.25em plus 0.05em minus 0.05em
+\raggedbottom
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{itemsep=0pt, topsep=3pt, parsep=0pt}
+\setlist[enumerate]{itemsep=0pt, topsep=3pt, parsep=0pt}
+
+% ---------------- Heading Setup ----------------
+\renewcommand{\contentsname}{สารบัญ}
+\renewcommand{\listfigurename}{สารบัญภาพ}
+\renewcommand{\listtablename}{สารบัญตาราง}
+\renewcommand{\figurename}{ภาพที่}
+\renewcommand{\tablename}{ตารางที่}
+\DeclareCaptionFont{reportcaption}{\fontsize{12pt}{18pt}\selectfont}
+\captionsetup{labelsep=space,font=reportcaption,labelfont=bf,justification=raggedright,singlelinecheck=false}
+\captionsetup[table]{position=top,skip=6pt}
+\captionsetup[figure]{position=bottom,skip=6pt}
+\DeclareCaptionType{codecaption}[โค้ดที่][สารบัญโค้ด]
+\captionsetup[codecaption]{position=top,skip=6pt,hypcap=false}
+\ifReportMode
+\renewcommand{\cftsecpresnum}{บทที่~}
+\fi
+\setlength{\cftsecnumwidth}{4.2em}
+\renewcommand{\cftfigpresnum}{ภาพที่~}
+\setlength{\cftfignumwidth}{4.2em}
+\renewcommand{\cfttabpresnum}{ตารางที่~}
+\setlength{\cfttabnumwidth}{4.6em}
+\renewcommand{\cftsecdotsep}{1.5}
+\renewcommand{\cftsubsecdotsep}{1.5}
+\renewcommand{\cftfigdotsep}{1.5}
+\renewcommand{\cfttabdotsep}{1.5}
+
+\renewcommand{\cfttoctitlefont}{\hfill\bfseries\fontsize{20pt}{24pt}\selectfont}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\renewcommand{\cftloftitlefont}{\hfill\bfseries\fontsize{20pt}{24pt}\selectfont}
+\renewcommand{\cftafterloftitle}{\hfill}
+\renewcommand{\cftlottitlefont}{\hfill\bfseries\fontsize{20pt}{24pt}\selectfont}
+\renewcommand{\cftafterlottitle}{\hfill}
+
+\titleformat{\section}[block]
+{\centering\bfseries\fontsize{20pt}{24pt}\selectfont}
+{\ifReportMode บทที่ \fi\thesection}
+{0.6em}
+{}
+\titlespacing*{\section}{0pt}{0pt}{0.8\baselineskip}
+
+\titleformat{\subsection}[hang]
+{\bfseries\fontsize{16pt}{21pt}\selectfont}
+{\thesubsection}
+{0.6em}
+{}
+\titlespacing*{\subsection}{0pt}{0.8\baselineskip}{0.25\baselineskip}
+
+\titleformat{\subsubsection}[hang]
+{\bfseries\fontsize{14pt}{19pt}\selectfont}
+{\thesubsubsection}
+{0.6em}
+{}
+\titlespacing*{\subsubsection}{0pt}{0.6\baselineskip}{0.2\baselineskip}
+
+% ---------------- Image Path ----------------
+\graphicspath{{images/}}
+
+% ---------------- Header and Footer ----------------
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[L]{}
+  \fancyfoot[C]{\thepage}
+}
+
+\renewcommand{\sectionmark}[1]{\markboth{บทที่ \thesection\quad #1}{}}
+
+% ---------------- Hyperlink Setup ----------------
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+% ---------------- Color Setup ----------------
+\definecolor{primaryblue}{HTML}{2196F3}
+\definecolor{lightblue}{HTML}{E3F2FD}
+\definecolor{codebackground}{HTML}{F6F8FA}
+\definecolor{codeborder}{HTML}{D0D7DE}
+\definecolor{codetext}{HTML}{111827}
+\definecolor{codemuted}{HTML}{64748B}
+\definecolor{codegreen}{HTML}{52525B}
+
+\definecolor{codekeyword}{HTML}{8B46FF}
+\definecolor{codestring}{HTML}{008577}
+\definecolor{codefunction}{HTML}{005CC5}
+
+% ---------------- Code Listing Setup ----------------
+\lstset{
+  basicstyle=\color{codetext}\ttfamily\fontsize{10pt}{14pt}\selectfont,
+  backgroundcolor=\color{codebackground},
+  frame=single,
+  rulecolor=\color{codeborder},
+  frameround=tttt,
+  framesep=0.45cm,
+  keywordstyle=\color{codetext}\bfseries,
+  commentstyle=\color{codegreen},
+  stringstyle=\color{codemuted},
+  showstringspaces=false,
+  breaklines=false,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  tabsize=2,
+  xleftmargin=0cm,
+  xrightmargin=0cm,
+  framexleftmargin=0.15cm,
+  framexrightmargin=0.15cm,
+  framextopmargin=0.35cm,
+  framexbottommargin=0.35cm,
+  aboveskip=0.8em,
+  belowskip=0.8em
+}
+
+% ---------------- TikZ Setup ----------------
+\tikzset{
+  flow/.style={
+    rectangle,
+    rounded corners=3pt,
+    draw=primaryblue,
+    fill=lightblue,
+    minimum width=3.2cm,
+    minimum height=1cm,
+    align=center
+  },
+  decision/.style={
+    diamond,
+    aspect=2.2,
+    draw=primaryblue,
+    fill=lightblue,
+    minimum width=3cm,
+    minimum height=1.1cm,
+    align=center
+  },
+  line/.style={
+    -{Latex[length=3mm]},
+    thick,
+    draw=gray!70
+  }
+}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={
+    const, let, var, function, return, if, else,
+    for, while, do, switch, case, break, continue,
+    true, false, null, undefined, new, class,
+    import, export, from, async, await, try, catch,
+    finally, throw, typeof, instanceof
+  },
+  morekeywords=[2]{prepare,run,get,all,exec,Number,Set},
+  keywordstyle=\color{codetext}\bfseries,
+  sensitive=true,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{codegreen},
+  morestring=[b]',
+  morestring=[b]",
+  morestring=[b]`,
+  stringstyle=\color{codemuted}
+}
+
+\lstdefinelanguage{JSON}{
+  keywords={true,false,null},
+  keywordstyle=\color{primaryblue}\bfseries,
+  sensitive=true,
+  morestring=[b]",
+  stringstyle=\color{orange!80!black}
+}
+
+% ---------------- Code Block: light rounded panel ----------------
+\newtcblisting{codeblock}[1]{
+  enhanced,
+  unbreakable,
+  listing only,
+  colback=codebackground,
+  colframe=codeborder,
+  boxrule=0.75pt,
+  arc=4.5pt,
+  outer arc=4.5pt,
+  boxsep=0pt,
+  left=4mm,
+  right=4mm,
+  top=3mm,
+  bottom=3mm,
+  before skip=0pt,
+  after skip=3pt,
+  listing options={
+    language=#1,
+    basicstyle=\ttfamily\fontsize{10pt}{14pt}\selectfont\color{codetext},
+    keywordstyle=\color{codekeyword},
+    keywordstyle={[2]\color{codefunction}},
+    commentstyle=\color{codemuted},
+    stringstyle=\color{codestring},
+    backgroundcolor=\color{codebackground},
+    frame=none,
+    framesep=0pt,
+    xleftmargin=0pt,
+    xrightmargin=0pt,
+    framexleftmargin=0pt,
+    framexrightmargin=0pt,
+    aboveskip=0pt,
+    belowskip=0pt,
+    numbers=none,
+    showstringspaces=false,
+    breaklines=false,
+    breakatwhitespace=true,
+    columns=fullflexible,
+    keepspaces=true,
+    tabsize=2
+  }
+}
+
+% ---------------- Shared document helpers ----------------
+\setsansfont[
+  Path=fonts/THSarabun/,
+  BoldFont=THSarabun-Bold.ttf,
+  ItalicFont=THSarabun-Italic.ttf,
+  BoldItalicFont=THSarabun-BoldItalic.ttf
+]{THSarabun.ttf}
+\usepackage{longtable}
+% URLs remain whole and start on a separate line in references.
+\usepackage{etoolbox}
+\AtBeginEnvironment{longtable}{\small\setlength{\tabcolsep}{4pt}}
+\renewcommand{\refname}{เอกสารอ้างอิง}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\tablecode}[1]{\mbox{\ttfamily\fontsize{10pt}{14pt}\selectfont\detokenize{#1}}}
+\lstdefinelanguage{PlainText}{}
+\hypersetup{pdftitle={\ReportTitle},citecolor=black}
+\newcommand{\reporturl}[1]{\par\nobreak\noindent\mbox{\href{#1}{\ttfamily\fontsize{10pt}{14pt}\selectfont\detokenize{#1}}}\par}
+\setlength{\heavyrulewidth}{0.5pt}
+\setlength{\lightrulewidth}{0.35pt}
+\definecolor{tableheader}{HTML}{E9EDF2}
+
+% Use a local left-aligned paragraph when long identifiers make justification ugly.
+\newenvironment{mixedprose}{\par\begingroup\rightskip=0pt plus 1fil}{\par\endgroup}
+% A code panel and its caption remain together; do not nest this inside a float.
+\newenvironment{codepanel}[1]{%
+  \par\addvspace{8pt}\noindent
+  \begin{minipage}{\linewidth}%
+    \captionof{codecaption}{#1}\nopagebreak
+  }{%
+  \end{minipage}\par\addvspace{6pt}%
+}
+\newcommand{\frontmatterpages}{%
+  \pagenumbering{roman}%
+  \renewcommand{\thepage}{\ifcase\value{page}\or ก\or ข\or ค\or ง\or จ\or ฉ\or ช\or ซ\or ฌ\or ญ\or ฎ\or ฏ\or ฐ\or ฑ\or ฒ\or ณ\else\arabic{page}\fi}%
+}
+\newcommand{\nextchapter}{\ifReportMode\clearpage\fi}

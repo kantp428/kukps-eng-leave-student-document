@@ -1,0 +1,31 @@
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=9mm, every node/.style={draw,rounded corners,align=center,font=\normalsize,text width=38mm,minimum height=12mm},>=Stealth]
+\node (source) at (0,0) {ข้อมูลต้นทาง\\รายการและข้อมูลอ้างอิง};
+\node (etl) at (5.2,0) {ETL\\สกัด แปลง ตรวจ และโหลด};
+\node (dw) at (10.4,0) {คลังข้อมูลรุ่นใหม่\\มิติ Fact และ Bridge};
+\node (api) at (10.4,-2.2) {บริการรายงาน\\ตรวจตัวตนและขอบเขต};
+\node (adapter) at (5.2,-2.2) {ตัวแปลงข้อมูลรายงาน\\สรุปและจัดกลุ่ม};
+\node (web) at (0,-2.2) {มุมมอง 6 บทบาท\\กราฟ ตาราง รายละเอียด};
+\draw[->] (source)--(etl); \draw[->] (etl)--(dw); \draw[->] (dw)--(api);
+\draw[->,dashed] (api)--(adapter); \draw[->] (adapter)--(web);
+\end{tikzpicture}
+\caption{สถาปัตยกรรมเป้าหมายของรายงาน เส้นประคือการเชื่อมที่ต้องยืนยันเพิ่มเติม เนื่องจาก provider ปัจจุบันใช้ข้อมูลจำลอง ภาพนี้วาดด้วยเวกเตอร์ในเอกสาร}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[every node/.style={draw,rounded corners,align=center,font=\normalsize,text width=39mm,minimum height=13mm},>=Stealth]
+\node (request) at (0,0) {Fact: ใบลา\\1 แถวต่อใบลา};
+\node (student) at (-5,0) {มิตินิสิตและบุคลากร\\ผู้ลาและที่ปรึกษา};
+\node (org) at (5,0) {มิติองค์กรและประเภทลา\\คณะ ภาค หลักสูตร};
+\node (term) at (0,2.2) {มิติภาคการศึกษา\\ปี เทอม และลำดับ};
+\node (rs) at (0,-2.2) {Fact: ใบลา--กลุ่มเรียน\\1 แถวต่อคู่คีย์};
+\node (offering) at (-5,-2.2) {มิติรายวิชาและ Offering\\วิชา เทอม กลุ่มเรียน};
+\node (bridge) at (5,-2.2) {ตารางเชื่อมผู้สอน\\รองรับหลายผู้สอน};
+\draw[->] (student)--(request); \draw[->] (org)--(request); \draw[->] (term)--(request);
+\draw[->] (request)--node[right,draw=none,text width=12mm,minimum height=0mm]{1:N}(rs);
+\draw[->] (offering)--(rs); \draw[->] (rs)--(bridge);
+\end{tikzpicture}
+\caption{แบบจำลองเชิงแนวคิดเฉพาะการวิเคราะห์การลา ลูกศรแสดงการเชื่อมข้อมูล ไม่ใช่ ERD ครบทุกคีย์}
+\end{figure}

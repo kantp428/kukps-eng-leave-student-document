@@ -1,0 +1,135 @@
+% XeLaTeX; A2 design scaled to A4 for the preview/export.
+\documentclass{article}
+\usepackage[paperwidth=420mm,paperheight=594mm,margin=18mm]{geometry}
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[a4paper]
+\usepackage{fontspec}
+\setmainfont{BaiJamjuree}[Path=font/Bai_Jamjuree/,Extension=.ttf,UprightFont=*-Regular,BoldFont=*-Bold,ItalicFont=*-Italic,BoldItalicFont=*-BoldItalic]
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip=0pt plus 1pt
+\XeTeXgenerateactualtext=1
+\usepackage{xcolor,graphicx,tikz,array,tabularx}
+\usetikzlibrary{arrows.meta,positioning}
+\definecolor{ink}{HTML}{153A3C}
+\definecolor{teal}{HTML}{087F75}
+\definecolor{mint}{HTML}{E9F5EF}
+\definecolor{blue}{HTML}{3159A7}
+\definecolor{pale}{HTML}{EEF3FC}
+\definecolor{muted}{HTML}{506865}
+\definecolor{paper}{HTML}{FAFCF8}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3mm}
+\long\def\placeposterblock#1,#2\stop#3#4{%
+  \AddToHook{shipout/foreground}{\setlength{\unitlength}{1mm}\put(#1,-#2){\raisebox{-\height}{
+        \begin{minipage}[t]{#3mm}#4
+\end{minipage}}}}}
+\NewDocumentEnvironment{textblock}{m r() +b}{\placeposterblock#2\stop{#1}{#3}}{}
+\newcommand{\heading}[2]{{\color{teal}\bfseries\fontsize{27}{35}\selectfont #1\quad #2\par}\vspace{2mm}}
+\newcommand{\smalllabel}[1]{{\fontsize{16}{23}\selectfont\color{muted}#1\par}}
+\newcommand{\role}[2]{\textbf{#1} & #2\\[4mm]}
+\begin{document}
+\color{ink}\fontsize{21}{31}\selectfont
+\AddToHook{shipout/background}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[paper] (current page.south west) rectangle (current page.north east);
+    \fill[teal] ([xshift=0mm,yshift=-9mm]current page.north west) rectangle ([xshift=420mm,yshift=-14mm]current page.north west);
+    \fill[mint,rounded corners=5mm] ([xshift=20mm,yshift=-116mm]current page.north west) rectangle ([xshift=400mm,yshift=-159mm]current page.north west);
+    \fill[white,rounded corners=5mm] ([xshift=20mm,yshift=-239mm]current page.north west) rectangle ([xshift=204mm,yshift=-535mm]current page.north west);
+    \fill[pale,rounded corners=5mm] ([xshift=216mm,yshift=-239mm]current page.north west) rectangle ([xshift=400mm,yshift=-535mm]current page.north west);
+    \draw[teal!25,line width=0.6pt] ([xshift=20mm,yshift=-545mm]current page.north west)--([xshift=400mm,yshift=-545mm]current page.north west);
+\end{tikzpicture}}
+
+\begin{textblock}{39}(23,25)
+  \includegraphics[width=33mm,height=41mm,keepaspectratio]{images/logo.png}
+\end{textblock}
+\begin{textblock}{327}(70,25)
+  \smalllabel{STUDENT LEAVE DATA WAREHOUSE}
+  {\bfseries\fontsize{43}{54}\selectfont ข้อมูลลา เล่าอะไรได้บ้าง?\par}
+  {\fontsize{24}{34}\selectfont คลังข้อมูลการลานิสิต คณะวิศวกรรมศาสตร์ กำแพงแสน\par}
+\end{textblock}
+\begin{textblock}{376}(24,84)
+  {\fontsize{18}{27}\selectfont
+    นายจิรภัทร แซ่ลี้ 6620501311\quad นายกานตภัท อาจหาญ 6620503349\\
+  นายธนวัฒน์ แซ่จึง 6620503403\quad นายศุภกร ลีลาธนางกุล 6620503578\par}
+\end{textblock}
+\begin{textblock}{359}(31,123)
+  {\bfseries\fontsize{25}{34}\selectfont จากใบลาหลายรายการ → สู่ภาพรวมที่เข้าใจง่าย\par}
+  รวมข้อมูลให้ดูได้ทั้งรายคน รายวิชา และรายเทอม\quad เลือกมุมมองตามบทบาท\\
+  โดยแยกหน่วยนับให้ชัด เพื่อไม่ให้ยอดซ้ำเมื่อใบลาเดียวเกี่ยวข้องกับหลายวิชา
+\end{textblock}
+
+\begin{textblock}{376}(24,171)
+  \heading{01}{ข้อมูลเดินทางมายังไง}
+  \begin{tikzpicture}[>=Stealth,box/.style={rounded corners=3mm,draw=teal!40,fill=white,text width=77mm,minimum height=24mm,align=center,font=\fontsize{20}{28}\selectfont},node distance=15mm]
+    \node[box] (a) {ข้อมูลใบลา\\และข้อมูลอ้างอิง};
+    \node[box,right=of a] (b) {ETL\\ตรวจและจัดรูปข้อมูล};
+    \node[box,right=of b] (c) {Warehouse\\เก็บเป็นโครงสร้างกลาง};
+    \node[box,right=of c] (d) {รายงานตามบทบาท\\กราฟ ตาราง รายละเอียด};
+    \draw[->,thick,teal](a)--(b);\draw[->,thick,teal](b)--(c);\draw[->,thick,teal,dashed](c)--(d);
+  \end{tikzpicture}
+  \smalllabel{เส้นประ: การเชื่อมรายงานกับข้อมูลจริงยังต้องตรวจครบเส้นทาง หน้าเว็บที่ตรวจปัจจุบันใช้ข้อมูลจำลอง}
+\end{textblock}
+
+\begin{textblock}{166}(29,248)
+  \heading{02}{เก็บแยกกัน เพื่อรวมให้ถูก}
+  \textbf{Fact ใบลา}\quad 1 แถว = 1 ใบลา\\
+  ใช้สรุปจำนวนใบลา วันลา และผู้ที่ลา
+
+  \textbf{Fact ใบลา–กลุ่มเรียน}\\
+  1 แถว = 1 ใบลา × 1 กลุ่มเรียน\\
+  ใช้ดูผลกระทบที่เกี่ยวกับแต่ละวิชา
+
+  \vspace{1mm}
+  \begin{tikzpicture}[>=Stealth,box/.style={draw=teal!40,fill=mint,rounded corners=2mm,align=center,text width=68mm,minimum height=18mm,font=\fontsize{19}{27}\selectfont}]
+    \node[box] (dim) at (0,0) {มิติข้อมูล\\นิสิต · เทอม · ประเภทลา};
+    \node[box] (req) at (0,-2.7) {Fact ใบลา\\จำนวนใบ · วันลา};
+    \node[box] (org) at (8.1,0) {มิติข้อมูล\\หน่วยงาน · ที่ปรึกษา};
+    \node[box] (rs) at (8.1,-2.7) {Fact ใบลา–กลุ่มเรียน\\ครั้งเรียน · ชั่วโมงเรียน};
+    \draw[->,thick,teal](dim)--(req);\draw[->,thick,teal](org)--(rs);
+    \draw[->,thick,teal](req)--node[above,font=\fontsize{16}{23}\selectfont]{1 : หลาย}(rs);
+  \end{tikzpicture}
+  \smalllabel{รายวิชา กลุ่มเรียน และตารางเชื่อมผู้สอนช่วยให้รองรับหลายวิชาและผู้สอนร่วม}
+
+  \vspace{3mm}
+  \heading{03}{ใบเดียว หลายวิชา ก็ไม่ซ้ำ}
+  \textbf{สมมติลา 2 วัน เกี่ยวข้องกับ 3 วิชา}\\
+  ภาพรวม = \textbf{1 ใบ / 2 วัน}\\
+  รายละเอียดวิชา = \textbf{3 ความสัมพันธ์}\\
+  จึงไม่เอา 2 × 3 ไปนับเป็น 6 วันลา
+
+  \smalllabel{วันลาตามปฏิทิน ≠ ชั่วโมงเรียนที่ได้รับผลกระทบ\\ชั่วโมงเรียนต้องมีข้อมูลตารางเรียนครบก่อน}
+\end{textblock}
+
+\begin{textblock}{166}(225,248)
+  \heading{04}{แต่ละคนอยากรู้อะไร}
+  \renewcommand{\arraystretch}{1.1}
+  \begin{tabularx}{\linewidth}{@{}p{48mm}X@{}}
+    \role{นิสิต}{เทอมนี้เราลาเท่าไร\newline เกี่ยวข้องกับวิชาไหนบ้าง}
+    \role{ที่ปรึกษา}{ในกลุ่มที่ดูแล ใครหรือ\newline ชั้นปีไหนมีการลาสูง}
+    \role{ผู้สอน}{วิชาและกลุ่มเรียนที่สอน\newline มีการลามากช่วงไหน}
+    \role{หัวหน้าภาค}{นิสิตในภาคกับวิชาของภาค\newline มีภาพรวมต่างกันยังไง}
+    \role{ผู้บริหาร}{แต่ละภาคและหลักสูตร\newline มีรูปแบบการลาต่างกันไหม}
+    \role{เจ้าหน้าที่}{กลุ่มนิสิตหรือที่ปรึกษาไหน\newline ควรเปิดดูรายละเอียดต่อ}
+  \end{tabularx}
+  \smalllabel{แต่ละบทบาทเห็นข้อมูลตามขอบเขตที่ได้รับสิทธิ์\\ไม่ใช้รหัสใน URL เป็นสิทธิ์เปิดข้อมูล}
+
+  \vspace{4mm}
+  \heading{05}{อ่านกราฟให้ได้คำตอบ}
+  เลือก \textbf{ปี / เทอม / ประเภทลา} ให้ตรงกัน\\
+  ค่อยเทียบจำนวนใบ วันลา หรือรายวิชา
+
+  \textbf{แนวโน้ม} → เปลี่ยนไปยังไงในแต่ละเทอม\\
+  \textbf{Top 10} → เริ่มดูรายละเอียดจากกลุ่มไหน\\
+  \textbf{สัดส่วน} → แต่ละกลุ่มมีส่วนเท่าไร
+
+  \smalllabel{ยอดสูงยังไม่บอกสาเหตุหรือความเสี่ยงทันที\\ต้องดูจำนวนนิสิตและบริบทของแต่ละกลุ่มด้วย}
+\end{textblock}
+
+\begin{textblock}{376}(24,552)
+  {\bfseries\fontsize{19}{28}\selectfont ไปต่อยังไง?\quad เชื่อมข้อมูลจริง → ตรวจยอดและสิทธิ์ → ทดลองใช้กับผู้ใช้\par}
+  \smalllabel{สถานะ: สรุปจากโครงสร้างและโค้ด ไม่ใช่ผลประเมินการใช้งานจริง ไม่มีการอ้างตัวเลขลดเวลาหรือคะแนนความพึงพอใจ}
+  {\fontsize{16}{23}\selectfont\color{muted}ภาควิชาวิศวกรรมคอมพิวเตอร์ · คณะวิศวกรรมศาสตร์ กำแพงแสน · มหาวิทยาลัยเกษตรศาสตร์\par}
+\end{textblock}
+\null
+\end{document}

@@ -1,0 +1,42 @@
+\section{ภาพสคีมาคลังข้อมูล}
+ภาพในภาคผนวกนี้นำมาจากชุดภาพ leave-schema ของบทความต้นฉบับ ใช้ประกอบการอ่านความสัมพันธ์ของตาราง ไม่ใช่ผลตรวจฐานข้อมูลที่ติดตั้งจริง และไม่ใช่ภาพหน้าจอที่จับใหม่ ภาพสคีมารวมมีตารางการอนุมัติอยู่ตามต้นฉบับ แต่เอกสารฉบับนี้อธิบายเฉพาะโครงสร้างสำหรับวิเคราะห์การลา รายวิชา มิติข้อมูล และการควบคุม ETL เท่านั้น
+
+\subsection{ภาพรวมกลุ่มตาราง}
+กลุ่มข้อมูลหลักประกอบด้วยใบลากับมิติอ้างอิง ความสัมพันธ์ผู้สอน บริบทนิสิตและสังกัดรายเทอม และข้อมูลกำกับรอบนำเข้า ภาพรวมช่วยแยกหน้าที่ของแต่ละกลุ่มก่อนอ่านรายละเอียดคอลัมน์
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth,height=0.68\textheight,keepaspectratio]{leave-schema/DW-OVERVIEW.png}
+  \caption{ภาพรวมกลุ่มตารางคลังข้อมูลจากชุดภาพต้นฉบับ}
+  \label{fig:warehouse-schema-overview}
+\end{figure}
+\clearpage
+\begin{landscape}
+  \subsection{ความสัมพันธ์ของข้อเท็จจริงและมิติ}
+  คีย์ใบลาเชื่อมรายละเอียดรายวิชา ขณะที่คีย์นิสิต เทอม ประเภทลา และหน่วยงานใช้จัดกลุ่มข้อมูล ต้องรักษาระดับรายละเอียดของแต่ละตารางเมื่อรวมยอด
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{leave-schema/DW-ERD.png}
+    \caption{ERD ของข้อเท็จจริงและมิติหลักในคลังข้อมูล}
+  \end{figure}
+\end{landscape}
+\clearpage
+\begin{landscape}
+  \subsection{สคีมารุ่น 2 แบบเต็ม}
+  ภาพแสดงชนิดคอลัมน์ คีย์หลัก และคีย์นอกของแบบจำลอง โดยแยกสีตามหน้าที่ของตาราง ใช้ประกอบคำอธิบาย fact ระดับใบลาและระดับใบลา--กลุ่มเรียนในบทที่ 3
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{leave-schema/DW-FULL_VERSION_2.png}
+    \caption{สคีมาคลังข้อมูลรุ่น 2: Fact, Dimension, Bridge, Snapshot และ Audit/ETL}
+  \end{figure}
+\end{landscape}
+\clearpage
+\begin{landscape}
+  \subsection{คอลัมน์ควบคุมและตรวจสอบ ETL}
+  รหัสระบบต้นทางและรหัสรายการช่วยระบุตัวตนข้อมูล ส่วน batch key เชื่อมข้อมูลกับรอบ ETL ตารางรอบนำเข้าและรายการปัญหาช่วยตรวจสอบการโหลดและติดตามคุณภาพข้อมูล
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth,height=0.74\textheight,keepaspectratio]{leave-schema/DW-CONTROL_COLUMNS.png}
+    \caption{คอลัมน์อ้างอิงต้นทาง รอบนำเข้า และการตรวจสอบคุณภาพข้อมูล}
+  \end{figure}
+\end{landscape}
+\clearpage
