@@ -1,0 +1,506 @@
+[
+  {
+    "name": "advisor-queue",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-advisor",
+    "full": false,
+    "file": "images/advisor-queue.png"
+  },
+  {
+    "name": "advisor-auto-approve",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/setting",
+    "full": false,
+    "file": "images/advisor-auto-approve.png"
+  },
+  {
+    "name": "user-report-directory",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report",
+    "full": false,
+    "file": "images/user-report-directory.png"
+  },
+  {
+    "name": "advisor-report-full",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor",
+    "full": true,
+    "file": "images/advisor-report-full.png"
+  },
+  {
+    "name": "advisor-report-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor",
+    "full": false,
+    "file": "images/advisor-report-1.png"
+  },
+  {
+    "name": "advisor-report-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor",
+    "full": false,
+    "file": "images/advisor-report-2.png"
+  },
+  {
+    "name": "advisor-report-3",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor",
+    "full": false,
+    "file": "images/advisor-report-3.png"
+  },
+  {
+    "name": "advisor-report-4",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor",
+    "full": false,
+    "file": "images/advisor-report-4.png"
+  },
+  {
+    "name": "advisor-student-report-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor/6620503349",
+    "full": false,
+    "file": "images/advisor-student-report-1.png"
+  },
+  {
+    "name": "advisor-student-report-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor/6620503349",
+    "full": false,
+    "file": "images/advisor-student-report-2.png"
+  },
+  {
+    "name": "advisor-student-report-3",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/advisor/6620503349",
+    "full": false,
+    "file": "images/advisor-student-report-3.png"
+  },
+  {
+    "name": "lecturer-report-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/lecturer",
+    "full": false,
+    "file": "images/lecturer-report-1.png"
+  },
+  {
+    "name": "lecturer-report-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/lecturer",
+    "full": false,
+    "file": "images/lecturer-report-2.png"
+  },
+  {
+    "name": "lecturer-report-3",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/lecturer",
+    "full": false,
+    "file": "images/lecturer-report-3.png"
+  },
+  {
+    "name": "lecturer-report-4",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/lecturer",
+    "full": false,
+    "file": "images/lecturer-report-4.png"
+  },
+  {
+    "name": "lecturer-subject-report-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/lecturer/02204101-65",
+    "full": false,
+    "file": "images/lecturer-subject-report-1.png"
+  },
+  {
+    "name": "lecturer-subject-report-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/lecturer/02204101-65",
+    "full": false,
+    "file": "images/lecturer-subject-report-2.png"
+  },
+  {
+    "name": "user-home",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user",
+    "full": false,
+    "file": "images/user-home.png"
+  },
+  {
+    "name": "advisor-students",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/my-student",
+    "full": false,
+    "file": "images/advisor-students.png"
+  },
+  {
+    "name": "advisor-student-history",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/my-student/6620503349",
+    "full": false,
+    "file": "images/advisor-student-history.png"
+  },
+  {
+    "name": "advisor-detail-completed-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-advisor/101705",
+    "full": false,
+    "file": "images/advisor-detail-completed-1.png"
+  },
+  {
+    "name": "advisor-detail-completed-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-advisor/101705",
+    "full": false,
+    "file": "images/advisor-detail-completed-2.png"
+  },
+  {
+    "name": "advisor-history",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approval-history",
+    "full": false,
+    "file": "images/advisor-history.png"
+  },
+  {
+    "name": "lecturer-classes",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/my-class?SectionPage=1&Page=1&Search=",
+    "full": false,
+    "file": "images/lecturer-classes.png"
+  },
+  {
+    "name": "lecturer-requests",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approved-request-my-class?Page_unopened=1&Tab=opened&Page=1&Search=",
+    "full": false,
+    "file": "images/lecturer-requests.png"
+  },
+  {
+    "name": "lecturer-request-detail",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approved-request-my-class/27",
+    "full": false,
+    "file": "images/lecturer-request-detail.png"
+  },
+  {
+    "name": "department-queue",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-dept-head",
+    "full": false,
+    "file": "images/department-queue.png"
+  },
+  {
+    "name": "department-auto-approve",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/setting",
+    "full": false,
+    "file": "images/department-auto-approve.png"
+  },
+  {
+    "name": "department-report-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-1.png"
+  },
+  {
+    "name": "department-report-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-2.png"
+  },
+  {
+    "name": "department-report-3",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-3.png"
+  },
+  {
+    "name": "department-report-4",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-4.png"
+  },
+  {
+    "name": "department-report-5",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-5.png"
+  },
+  {
+    "name": "department-report-6",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-6.png"
+  },
+  {
+    "name": "department-report-7",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-7.png"
+  },
+  {
+    "name": "department-report-8",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": false,
+    "file": "images/department-report-8.png"
+  },
+  {
+    "name": "department-report-full",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/department-head",
+    "full": true,
+    "file": "images/department-report-full.png"
+  },
+  {
+    "name": "dean-queue",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-associate-dean",
+    "full": false,
+    "file": "images/dean-queue.png"
+  },
+  {
+    "name": "dean-approval-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-associate-dean/26",
+    "full": false,
+    "file": "images/dean-approval-1.png"
+  },
+  {
+    "name": "dean-approval-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-associate-dean/26",
+    "full": false,
+    "file": "images/dean-approval-2.png"
+  },
+  {
+    "name": "approval-confirm",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-associate-dean/26",
+    "full": false,
+    "file": "images/approval-confirm.png"
+  },
+  {
+    "name": "approval-reject-confirm",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/approve-leave-request/as-associate-dean/26",
+    "full": false,
+    "file": "images/approval-reject-confirm.png"
+  },
+  {
+    "name": "dean-auto-approve",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/setting",
+    "full": false,
+    "file": "images/dean-auto-approve.png"
+  },
+  {
+    "name": "dean-report-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-1.png"
+  },
+  {
+    "name": "dean-report-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-2.png"
+  },
+  {
+    "name": "dean-report-3",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-3.png"
+  },
+  {
+    "name": "dean-report-4",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-4.png"
+  },
+  {
+    "name": "dean-report-5",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-5.png"
+  },
+  {
+    "name": "dean-report-6",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-6.png"
+  },
+  {
+    "name": "dean-report-7",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-7.png"
+  },
+  {
+    "name": "dean-report-8",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-8.png"
+  },
+  {
+    "name": "admin-home",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff",
+    "full": false,
+    "file": "images/admin-home.png"
+  },
+  {
+    "name": "admin-requests",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-leave-requests?Page_in_progress=1&Tab=completed&Page=1&Search=",
+    "full": false,
+    "file": "images/admin-requests.png"
+  },
+  {
+    "name": "admin-request-detail-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-leave-requests/101703",
+    "full": false,
+    "file": "images/admin-request-detail-1.png"
+  },
+  {
+    "name": "admin-request-detail-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-leave-requests/101703",
+    "full": false,
+    "file": "images/admin-request-detail-2.png"
+  },
+  {
+    "name": "admin-terms-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/academic-term-settings",
+    "full": false,
+    "file": "images/admin-terms-1.png"
+  },
+  {
+    "name": "admin-terms-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/academic-term-settings",
+    "full": false,
+    "file": "images/admin-terms-2.png"
+  },
+  {
+    "name": "admin-departments-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-settings",
+    "full": false,
+    "file": "images/admin-departments-1.png"
+  },
+  {
+    "name": "admin-departments-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-settings/1",
+    "full": false,
+    "file": "images/admin-departments-2.png"
+  },
+  {
+    "name": "admin-department-edit",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-settings/1/edit",
+    "full": false,
+    "file": "images/admin-department-edit.png"
+  },
+  {
+    "name": "admin-major-create",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-settings/1/majors/new",
+    "full": false,
+    "file": "images/admin-major-create.png"
+  },
+  {
+    "name": "admin-major-edit",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-settings/1/majors/1/edit",
+    "full": false,
+    "file": "images/admin-major-edit.png"
+  },
+  {
+    "name": "admin-department-create",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/department-settings/new",
+    "full": false,
+    "file": "images/admin-department-create.png"
+  },
+  {
+    "name": "student-home",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student",
+    "full": false,
+    "file": "images/student-home.png"
+  },
+  {
+    "name": "student-report-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/report",
+    "full": false,
+    "file": "images/student-report-1.png"
+  },
+  {
+    "name": "student-report-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/report",
+    "full": false,
+    "file": "images/student-report-2.png"
+  },
+  {
+    "name": "student-report-3",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/report",
+    "full": false,
+    "file": "images/student-report-3.png"
+  },
+  {
+    "name": "student-report-4",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/report",
+    "full": false,
+    "file": "images/student-report-4.png"
+  },
+  {
+    "name": "student-my-class",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-class",
+    "full": false,
+    "file": "images/student-my-class.png"
+  },
+  {
+    "name": "student-contact",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/contact",
+    "full": false,
+    "file": "images/student-contact.png"
+  },
+  {
+    "name": "student-requests",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request",
+    "full": false,
+    "file": "images/student-requests.png"
+  },
+  {
+    "name": "student-request-detail",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request/26",
+    "full": false,
+    "file": "images/student-request-detail.png"
+  },
+  {
+    "name": "student-requests-completed",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request?Page_in_progress=1&Tab=completed&Page=1&Search=",
+    "full": false,
+    "file": "images/student-requests-completed.png"
+  },
+  {
+    "name": "student-document",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request/101704/document",
+    "full": false,
+    "file": "images/student-document.png"
+  },
+  {
+    "name": "student-new-request-1",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request/new",
+    "full": false,
+    "file": "images/student-new-request-1.png"
+  },
+  {
+    "name": "student-new-request-2",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request/new",
+    "full": false,
+    "file": "images/student-new-request-2.png"
+  },
+  {
+    "name": "student-custom-session",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request/new",
+    "full": false,
+    "file": "images/student-custom-session.png"
+  },
+  {
+    "name": "student-new-request-3",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/my-leave-request/new",
+    "full": false,
+    "file": "images/student-new-request-3.png"
+  },
+  {
+    "name": "dean-report-overview",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-overview.png"
+  },
+  {
+    "name": "dean-report-comparison",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/report/executive",
+    "full": false,
+    "file": "images/dean-report-comparison.png"
+  },
+  {
+    "name": "user-mobile-services",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/services",
+    "full": false,
+    "file": "images/user-mobile-services.png"
+  },
+  {
+    "name": "user-mobile-settings",
+    "url": "http://localhost:3000/kukps-eng-leave-student/user/setting",
+    "full": false,
+    "file": "images/user-mobile-settings.png"
+  },
+  {
+    "name": "admin-mobile-services",
+    "url": "http://localhost:3000/kukps-eng-leave-student/admin-staff/services",
+    "full": false,
+    "file": "images/admin-mobile-services.png"
+  },
+  {
+    "name": "student-mobile-services",
+    "url": "http://localhost:3000/kukps-eng-leave-student/student/services",
+    "full": false,
+    "file": "images/student-mobile-services.png"
+  }
+]
